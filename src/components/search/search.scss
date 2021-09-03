@@ -10,7 +10,8 @@
   overflow: visible;
 
   @include mobile {
-    height: 105px;
+    height: 13vh;
+    min-height: 105px;
     justify-content: flex-end;
   }
 
