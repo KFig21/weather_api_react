@@ -14,6 +14,10 @@
     min-height: 108px;
     justify-content: flex-end;
   }
+  @include mobileHorizontal {
+    position: absolute;
+    top: 0px;
+  }
 
   form {
     display: flex;
@@ -37,6 +41,10 @@
       justify-content: center;
       transition: all 0.5s ease;
       flex: 1;
+
+      @include mobileHorizontal {
+        max-width: 200px;
+      }
 
       input {
         font-size: 18px;
@@ -151,6 +159,10 @@
       top: 10px;
       width: 100vw;
       padding: 6px 10px;
+    }
+
+    @include mobileHorizontal {
+      bottom: -25px;
     }
   }
 }

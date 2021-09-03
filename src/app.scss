@@ -23,6 +23,8 @@
 
       @include mobileHorizontal {
         flex-direction: row;
+        position: absolute;
+        top: 90px;
       }
     }
   }
