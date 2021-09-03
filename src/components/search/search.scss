@@ -63,6 +63,10 @@
         .clear-input {
           visibility: visible;
           cursor: pointer;
+
+          &:focus {
+            box-shadow: none;
+          }
         }
       }
     }
