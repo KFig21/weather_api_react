@@ -19,16 +19,6 @@ export default function Search({
     getWeather(cityInput.trim(), countryInput);
   };
 
-  const handleClearCity = (e) => {
-    e.preventDefault();
-    setCityInput("");
-  };
-
-  const handleClearCountry = (e) => {
-    e.preventDefault();
-    setCountryInput("");
-  };
-
   return (
     <div className="search">
       <form action="">
@@ -38,14 +28,8 @@ export default function Search({
             placeholder="City"
             onChange={(e) => setCityInput(e.target.value)}
             value={`${cityInput}`}
+            onFocus={() => setCityInput("")}
           />
-          <button
-            tabindex="-1"
-            className="clear-input"
-            onClick={handleClearCity}
-          >
-            <CloseIcon />
-          </button>
         </div>
         <div className={`input-container input${backgroundCode}`}>
           <input
@@ -53,14 +37,8 @@ export default function Search({
             placeholder="Country"
             onChange={(e) => setCountryInput(e.target.value)}
             value={`${countryInput}`}
+            onFocus={() => setCountryInput("")}
           />
-          <button
-            tabindex="-1"
-            className="clear-input"
-            onClick={handleClearCountry}
-          >
-            <CloseIcon />
-          </button>
         </div>
         <button
           className={`button${backgroundCode}`}
