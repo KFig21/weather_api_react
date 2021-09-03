@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/weather_api_react/static/css/main.71d084f1.chunk.css",
+    "main.js": "/weather_api_react/static/js/main.6d80f021.chunk.js",
+    "main.js.map": "/weather_api_react/static/js/main.6d80f021.chunk.js.map",
+    "runtime-main.js": "/weather_api_react/static/js/runtime-main.17365141.js",
+    "runtime-main.js.map": "/weather_api_react/static/js/runtime-main.17365141.js.map",
+    "static/css/2.0b682c81.chunk.css": "/weather_api_react/static/css/2.0b682c81.chunk.css",
+    "static/js/2.8172fc43.chunk.js": "/weather_api_react/static/js/2.8172fc43.chunk.js",
+    "static/js/2.8172fc43.chunk.js.map": "/weather_api_react/static/js/2.8172fc43.chunk.js.map",
+    "index.html": "/weather_api_react/index.html",
+    "static/css/2.0b682c81.chunk.css.map": "/weather_api_react/static/css/2.0b682c81.chunk.css.map",
+    "static/css/main.71d084f1.chunk.css.map": "/weather_api_react/static/css/main.71d084f1.chunk.css.map",
+    "static/js/2.8172fc43.chunk.js.LICENSE.txt": "/weather_api_react/static/js/2.8172fc43.chunk.js.LICENSE.txt",
+    "static/media/background-canyon.0e5bcbbe.jpg": "/weather_api_react/static/media/background-canyon.0e5bcbbe.jpg",
+    "static/media/background-cloud-801.25178247.jpg": "/weather_api_react/static/media/background-cloud-801.25178247.jpg",
+    "static/media/background-cloud-802.088c9780.jpg": "/weather_api_react/static/media/background-cloud-802.088c9780.jpg",
+    "static/media/background-cloud-803.27698d06.jpg": "/weather_api_react/static/media/background-cloud-803.27698d06.jpg",
+    "static/media/background-cloud-804.8c6c7f57.jpg": "/weather_api_react/static/media/background-cloud-804.8c6c7f57.jpg",
+    "static/media/background-cloud.5058d1fa.jpg": "/weather_api_react/static/media/background-cloud.5058d1fa.jpg",
+    "static/media/background-fog.dd14cfba.jpg": "/weather_api_react/static/media/background-fog.dd14cfba.jpg",
+    "static/media/background-rain.17415aab.jpg": "/weather_api_react/static/media/background-rain.17415aab.jpg",
+    "static/media/background-snow.20bd9145.jpg": "/weather_api_react/static/media/background-snow.20bd9145.jpg",
+    "static/media/background-storm.9ece14c5.jpg": "/weather_api_react/static/media/background-storm.9ece14c5.jpg",
+    "static/media/background-sunny.e6162554.jpg": "/weather_api_react/static/media/background-sunny.e6162554.jpg",
+    "static/media/weather-icons.css": "/weather_api_react/static/media/weathericons-regular-webfont.e218aee6.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.17365141.js",
+    "static/css/2.0b682c81.chunk.css",
+    "static/js/2.8172fc43.chunk.js",
+    "static/css/main.71d084f1.chunk.css",
+    "static/js/main.6d80f021.chunk.js"
+  ]
+}
