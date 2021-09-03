@@ -148,7 +148,7 @@
 
     @include mobile {
       bottom: unset;
-      top: 10px;
+      top: 10px !important;
       width: 100vw;
     }
   }

@@ -59,6 +59,8 @@
       @include mobile {
         margin-bottom: 0px;
         font-size: 20px;
+        min-width: 57px;
+        // text-align: start;
       }
     }
 
@@ -96,6 +98,7 @@
       @include mobile {
         margin-top: 0px;
         font-size: 20px;
+        min-width: 100px;
       }
     }
   }
