@@ -1,6 +1,7 @@
 import React from "react";
 import "./search.scss";
 import SearchIcon from "@material-ui/icons/Search";
+import CloseIcon from "@material-ui/icons/Close";
 
 export default function Search({
   cityInput,
@@ -15,24 +16,52 @@ export default function Search({
 
   const handleSearch = (e) => {
     e.preventDefault();
-    getWeather(cityInput, countryInput);
+    getWeather(cityInput.trim(), countryInput);
+  };
+
+  const handleClearCity = (e) => {
+    e.preventDefault();
+    setCityInput("");
+  };
+
+  const handleClearCountry = (e) => {
+    e.preventDefault();
+    setCountryInput("");
   };
 
   return (
     <div className="search">
       <form action="">
-        <input
-          className={`input${backgroundCode}`}
-          type="text"
-          placeholder="City"
-          onChange={(e) => setCityInput(e.target.value)}
-        />
-        <input
-          className={`input${backgroundCode}`}
-          type="text"
-          placeholder="Country"
-          onChange={(e) => setCountryInput(e.target.value)}
-        />
+        <div className={`input-container input${backgroundCode}`}>
+          <input
+            type="text"
+            placeholder="City"
+            onChange={(e) => setCityInput(e.target.value)}
+            value={`${cityInput}`}
+          />
+          <button
+            tabindex="-1"
+            className="clear-input"
+            onClick={handleClearCity}
+          >
+            <CloseIcon />
+          </button>
+        </div>
+        <div className={`input-container input${backgroundCode}`}>
+          <input
+            type="text"
+            placeholder="Country"
+            onChange={(e) => setCountryInput(e.target.value)}
+            value={`${countryInput}`}
+          />
+          <button
+            tabindex="-1"
+            className="clear-input"
+            onClick={handleClearCountry}
+          >
+            <CloseIcon />
+          </button>
+        </div>
         <button
           className={`button${backgroundCode}`}
           disabled={isInvalid}

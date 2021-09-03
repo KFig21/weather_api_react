@@ -26,25 +26,46 @@
       margin-top: 30px;
     }
 
-    input {
-      padding: 10px;
-      font-size: 18px;
-      color: rgb(59, 59, 59);
+    .input-container {
       background-color: rgba(255, 255, 255, 0.6);
       backdrop-filter: blur(2px) contrast(80%);
       border-radius: 3px;
-      outline: none;
-      border: none;
       margin: 5px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       transition: all 0.5s ease;
       flex: 1;
 
-      &:focus {
+      input {
+        font-size: 18px;
+        color: rgb(59, 59, 59);
+        background-color: transparent;
+        outline: none;
+        border: none;
+        width: 100%;
+      }
+
+      .clear-input {
+        visibility: hidden;
+        padding: 0px;
+        margin: 0px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+      }
+
+      &:focus-within {
         box-shadow: 0px 0px 1px 2px $outlineColor;
         flex: 3;
+
+        .clear-input {
+          visibility: visible;
+          cursor: pointer;
+        }
       }
     }
-
     button {
       display: flex;
       align-items: center;
@@ -56,6 +77,7 @@
       border: none;
       background-color: $buttonColor;
       border-radius: 3px;
+      cursor: pointer;
 
       &:focus {
         box-shadow: 0px 0px 1px 2px $outlineColor;
