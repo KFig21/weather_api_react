@@ -28,6 +28,9 @@
     justify-content: flex-start;
     overflow-y: scroll;
   }
+  @include mobileKeyboard {
+    display: none;
+  }
 
   .day-container {
     padding: 10px;

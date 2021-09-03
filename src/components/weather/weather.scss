@@ -21,6 +21,10 @@
     height: 37vh;
     min-height: 300px;
   }
+  @include mobileKeyboard {
+    transform: scale(0.8);
+    min-height: 240px;
+  }
 
   .weather-container {
     display: flex;
