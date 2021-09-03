@@ -90,7 +90,7 @@ function App() {
   const getWeather = async (city, country) => {
     // call api
     const weather_api_call = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_key}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_key}`
     );
     // convert to json
     const weatherCall = await weather_api_call.json();
@@ -101,7 +101,7 @@ function App() {
     }
     // fetch forecast data with longitude and latitude
     const forecast_api_call = await fetch(
-      `http://api.openweathermap.org/data/2.5/onecall?lat=${weatherCall.coord.lat}&lon=${weatherCall.coord.lon}&exclude=minutely,hourly,alerts&appid=${API_key}`
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${weatherCall.coord.lat}&lon=${weatherCall.coord.lon}&exclude=minutely,hourly,alerts&appid=${API_key}`
     );
     const forecastCall = await forecast_api_call.json();
     console.log("weatherCall", weatherCall);
