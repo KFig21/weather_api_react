@@ -1,0 +1,82 @@
+@import "./global.scss";
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+  overflow: hidden;
+
+  .content {
+    display: flex;
+    z-index: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    position: absolute;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    z-index: 0;
+    object-fit: cover;
+    min-width: 100vw;
+    min-height: 100vh;
+    top: 0;
+    transition: all 0.5s ease;
+    overflow: hidden;
+  }
+
+  .day-info {
+    position: absolute;
+    top: 15px;
+    max-width: 1000px;
+    width: 90vw;
+    padding-right: 5%;
+    text-align: end;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    z-index: 2;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7);
+
+    @include mobile {
+      width: 95vw;
+    }
+  }
+
+  .temp-info {
+    position: absolute;
+    top: 15px;
+    max-width: 1000px;
+    width: 90vw;
+    padding-left: 5%;
+    text-align: start;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    z-index: 3;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7);
+
+    @include mobile {
+      width: 95vw;
+    }
+
+    span {
+      cursor: pointer;
+    }
+  }
+
+  .suspense {
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,125 @@
+@import "../../global.scss";
+
+.search {
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  overflow: visible;
+
+  @include mobile {
+    height: 13vh;
+    justify-content: flex-end;
+  }
+
+  form {
+    display: flex;
+    flex-direction: row;
+    transition: all 0.5s ease;
+    z-index: 4;
+
+    @include mobile {
+      max-width: 95vw;
+      margin-top: 30px;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 18px;
+      color: rgb(59, 59, 59);
+      background-color: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(2px) contrast(80%);
+      border-radius: 3px;
+      outline: none;
+      border: none;
+      margin: 5px;
+
+      &:focus {
+        box-shadow: 0px 0px 1px 2px $outlineColor;
+      }
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      padding: 10px;
+      margin: 5px;
+      outline: none;
+      border: none;
+      background-color: $buttonColor;
+      border-radius: 3px;
+
+      &:focus {
+        box-shadow: 0px 0px 1px 2px $outlineColor;
+      }
+
+      @include mobile {
+        padding: 0px;
+        min-width: 40px;
+      }
+    }
+
+    // search colors for rain - 500
+    .input500 {
+      background-color: rgba(255, 255, 255, 0.411);
+      &:focus {
+        box-shadow: 0px 0px 1px 2px $outlineColor;
+      }
+    }
+    .button500 {
+      background-color: $buttonColor;
+      &:focus {
+        box-shadow: 0px 0px 1px 2px $outlineColor;
+      }
+    }
+    // search colors for snow - 600
+    .input600 {
+      &:focus {
+        box-shadow: 0px 0px 1px 2px rgba(0, 41, 128, 0.74);
+      }
+    }
+    .button600 {
+      background-color: rgba(255, 153, 0, 0.7);
+      &:focus {
+        box-shadow: 0px 0px 1px 2px rgba(0, 41, 128, 0.74);
+      }
+    }
+    // search colors for fog - 700
+    .input700 {
+      background-color: rgba(128, 128, 128, 0.411);
+      &:focus {
+        box-shadow: 0px 0px 1px 2px rgba(0, 68, 255, 0.7);
+      }
+    }
+    .button700 {
+      background-color: rgba(0, 68, 255, 0.7);
+      &:focus {
+        box-shadow: 0px 0px 1px 2px rgba(0, 68, 255, 0.7);
+      }
+    }
+  }
+
+  .error {
+    position: absolute;
+    bottom: -10px;
+    color: white;
+    background-color: rgba(220, 20, 60, 0.8);
+    backdrop-filter: blur(2px);
+    padding: 5px 10px 7px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+
+    @include mobile {
+      bottom: unset;
+      top: 10px;
+      width: 100vw;
+    }
+  }
+}

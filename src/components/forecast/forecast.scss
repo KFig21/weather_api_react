@@ -1,0 +1,104 @@
+@import "../../global.scss";
+
+.forecast-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 90vw;
+  height: 20vh;
+  max-width: 1000px;
+  margin-bottom: 15px;
+  color: white;
+  text-shadow: 0px 0px 16px rgba(0, 0, 0, 1);
+
+  * {
+    overflow: visible;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    max-width: 500px;
+    height: 45vh;
+    margin-bottom: 25px;
+    text-shadow: 0px 0px 5px black;
+  }
+  @include narrow {
+    height: 50vh;
+  }
+
+  .day-container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    text-align: center;
+
+    @include mobile {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0px;
+      width: 80%;
+      margin-bottom: 0px;
+    }
+
+    @include desktop {
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    .date {
+      font-weight: 700;
+      margin-bottom: 4px;
+      font-size: 24px;
+
+      @include mobile {
+        margin-bottom: 0px;
+        font-size: 20px;
+      }
+    }
+
+    .icon-container {
+      font-size: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 45px;
+
+      @include mobile {
+        font-size: 20px;
+      }
+
+      i {
+        overflow: visible;
+      }
+    }
+
+    .minmax-container {
+      font-size: 18px;
+      margin-top: 4px;
+
+      .max-temp {
+        padding: 0px 2px 0px 0px;
+      }
+
+      .min-temp {
+        padding: 0px 0px 0px 5px;
+      }
+
+      @include mobile {
+        margin-top: 0px;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.bg600 {
+  background-color: rgba(6, 31, 70, 0.4);
+  border-radius: 3px;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+  backdrop-filter: blur(2px) contrast(80%);
+}
