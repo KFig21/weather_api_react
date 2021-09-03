@@ -37,9 +37,6 @@
     @include mobile {
       margin-top: 0px;
     }
-    @include mobileHorizontalKeyboard {
-      display: none;
-    }
 
     // location
     h1 {

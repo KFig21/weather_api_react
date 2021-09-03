@@ -26,6 +26,9 @@
         position: absolute;
         top: 90px;
       }
+      @include mobileHorizontalKeyboard {
+        display: none;
+      }
     }
   }
 
