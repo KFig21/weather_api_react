@@ -15,14 +15,20 @@ $width: 768px;
   }
 }
 
+@mixin desktop {
+  @media (min-width: #{$width}) {
+    @content;
+  }
+}
+
 @mixin mobileKeyboard {
   @media (max-height: 500px) {
     @content;
   }
 }
 
-@mixin desktop {
-  @media (min-width: #{$width}) {
+@mixin mobileHorizontal {
+  @media (max-height: 420px) {
     @content;
   }
 }

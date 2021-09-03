@@ -176,16 +176,18 @@ function App() {
           backgroundCode={backgroundCode}
         />
         <Suspense fallback={<div className="suspense">loading...</div>}>
-          <Weather
-            now={now}
-            tempType={tempType}
-            handleTempType={handleTempType}
-          />
-          <Forecast
-            forecast={forecast}
-            tempType={tempType}
-            backgroundCode={backgroundCode}
-          />
+          <div className="lower-content">
+            <Weather
+              now={now}
+              tempType={tempType}
+              handleTempType={handleTempType}
+            />
+            <Forecast
+              forecast={forecast}
+              tempType={tempType}
+              backgroundCode={backgroundCode}
+            />
+          </div>
         </Suspense>
       </div>
       <img

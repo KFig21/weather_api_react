@@ -22,8 +22,10 @@
     min-height: 300px;
   }
   @include mobileKeyboard {
-    transform: scale(0.8);
-    min-height: 240px;
+    min-height: 260px;
+  }
+  @include mobileHorizontal {
+    min-height: none;
   }
 
   .weather-container {
@@ -34,6 +36,9 @@
 
     @include mobile {
       margin-top: 0px;
+    }
+    @include mobileHorizontal {
+      // padding: 0px 20px;
     }
 
     // location
@@ -49,6 +54,9 @@
 
       @include narrow {
         margin-top: 10px;
+        font-size: 40px;
+      }
+      @include mobileHorizontal {
         font-size: 40px;
       }
     }
@@ -68,6 +76,10 @@
         @include narrow {
           padding: 0px 6px;
         }
+        @include mobileHorizontal {
+          padding: 0px 5px;
+          min-width: 120px;
+        }
 
         // icon
         .icon-container {
@@ -81,6 +93,9 @@
           @include narrow {
             min-height: 100px;
           }
+          @include mobileHorizontal {
+            min-height: 80px;
+          }
 
           i {
             font-size: 130px;
@@ -91,6 +106,9 @@
 
             @include narrow {
               font-size: 95px;
+            }
+            @include mobileHorizontal {
+              font-size: 75px;
             }
           }
         }
@@ -103,6 +121,9 @@
 
           @include mobile {
             font-size: 20px;
+          }
+          @include mobileHorizontal {
+            font-size: 17px;
           }
         }
 
@@ -120,6 +141,9 @@
           @include narrow {
             font-size: 50px;
           }
+          @include mobileHorizontal {
+            font-size: 30px;
+          }
         }
 
         // max/min temp
@@ -127,6 +151,10 @@
           font-size: 24px;
           padding: 0px;
           margin: 0px;
+
+          @include mobileHorizontal {
+            font-size: 20px;
+          }
 
           .max-temp {
             padding: 0px 7px 0px 0px;

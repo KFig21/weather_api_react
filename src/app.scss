@@ -10,10 +10,21 @@
 
   .content {
     display: flex;
-    z-index: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 1;
+
+    .lower-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      @include mobileHorizontal {
+        flex-direction: row;
+      }
+    }
   }
 
   img {
@@ -45,6 +56,10 @@
     @include mobile {
       width: 95vw;
     }
+    @include mobileHorizontal {
+      width: 96vw;
+      padding-right: 0px;
+    }
   }
 
   .temp-info {
@@ -62,6 +77,9 @@
 
     @include mobile {
       width: 95vw;
+    }
+    @include mobileHorizontal {
+      padding-left: 0px;
     }
 
     span {
