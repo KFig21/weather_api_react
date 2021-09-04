@@ -1,4 +1,4 @@
-import { useEffect, useState, Suspense } from "react";
+import { useEffect, useState } from "react";
 import "./app.scss";
 import "weather-icons/css/weather-icons.css";
 import Weather from "./components/weather/Weather";
@@ -6,6 +6,7 @@ import Search from "./components/search/Search";
 import Forecast from "./components/forecast/Forecast";
 import canyonBGI from "./assets/background-canyon.jpg";
 import sunnyBGI from "./assets/background-sunny.jpg";
+import drizzleBGI from "./assets/background-drizzle.jpg";
 import rainBGI from "./assets/background-rain.jpg";
 import stormBGI from "./assets/background-storm.jpg";
 import snowBGI from "./assets/background-snow.jpg";
@@ -29,6 +30,13 @@ function App() {
   const [error, setError] = useState("");
   const [forecast, setForecast] = useState([{}, {}, {}, {}, {}, {}, {}, {}]);
   const [backgroundCode, setBackgroundCode] = useState(null);
+  const [recent, setRecent] = useState([
+    "New York",
+    "Los Angeles",
+    "Tokyo",
+    "London",
+    "Sydney",
+  ]);
 
   const convertToMetric = (x) => {
     return x - 273.15;
@@ -124,6 +132,13 @@ function App() {
       description: weatherCall.weather[0].description,
     });
 
+    //set recent
+    if (!recent.includes(weatherCall.name)) {
+      let arr = [weatherCall.name, ...recent];
+      arr.pop();
+      setRecent(arr);
+    }
+
     // set next 7 day forecast
     let forecastArr = [];
     for (let i = 1; i < 8; i++) {
@@ -150,7 +165,7 @@ function App() {
   };
 
   useEffect(() => {
-    getWeather("Philadelphia");
+    getWeather("New York");
   }, []);
 
   return (
@@ -174,13 +189,16 @@ function App() {
           getWeather={getWeather}
           error={error}
           backgroundCode={backgroundCode}
+          recent={recent}
+          setRecent={setRecent}
         />
-        <Suspense fallback={<div className="suspense">loading...</div>}>
+        {now.name !== undefined && (
           <div className="lower-content">
             <Weather
               now={now}
               tempType={tempType}
               handleTempType={handleTempType}
+              backgroundCode={backgroundCode}
             />
             <Forecast
               forecast={forecast}
@@ -188,7 +206,7 @@ function App() {
               backgroundCode={backgroundCode}
             />
           </div>
-        </Suspense>
+        )}
       </div>
       <img
         style={backgroundCode === 200 ? { opacity: 1 } : { opacity: 0 }}
@@ -198,7 +216,7 @@ function App() {
       <img
         style={backgroundCode === 300 ? { opacity: 1 } : { opacity: 0 }}
         src={rainBGI}
-        alt="sleet"
+        alt="drizzle"
       />
       <img
         style={backgroundCode === 500 ? { opacity: 1 } : { opacity: 0 }}

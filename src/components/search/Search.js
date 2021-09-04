@@ -1,7 +1,6 @@
 import React from "react";
 import "./search.scss";
 import SearchIcon from "@material-ui/icons/Search";
-import CloseIcon from "@material-ui/icons/Close";
 
 export default function Search({
   cityInput,
@@ -11,6 +10,8 @@ export default function Search({
   getWeather,
   error,
   backgroundCode,
+  recent,
+  setRecent,
 }) {
   const isInvalid = cityInput === "";
 
@@ -18,6 +19,17 @@ export default function Search({
     e.preventDefault();
     getWeather(cityInput.trim(), countryInput);
   };
+
+  const handleRecentSearch = (city) => {
+    if (!recent.includes(city)) {
+      let arr = [city, ...recent];
+      arr.pop();
+      setRecent(arr);
+    }
+    getWeather(city, "");
+  };
+
+  console.log("recent", recent);
 
   return (
     <div className="search">
@@ -49,6 +61,16 @@ export default function Search({
           <SearchIcon />
         </button>
       </form>
+      <div className="recent">
+        {recent.map((city) => (
+          <span
+            className={`city`}
+            onClick={() => handleRecentSearch(`${city}`)}
+          >
+            {city}
+          </span>
+        ))}
+      </div>
       <div className="error" style={error ? { opacity: 1 } : { opacity: 0 }}>
         <span>{error ? error : null}</span>
       </div>

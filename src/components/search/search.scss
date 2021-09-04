@@ -1,7 +1,7 @@
 @import "../../global.scss";
 
 .search {
-  height: 20vh;
+  height: 23vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,9 +10,12 @@
   overflow: visible;
 
   @include mobile {
-    height: 13vh;
+    // height: 20vh;
     min-height: 108px;
     justify-content: flex-end;
+  }
+  @include narrow {
+    height: 19vh;
   }
   @include mobileHorizontal {
     position: absolute;
@@ -107,10 +110,38 @@
       }
     }
 
+    // search colors for thunderstorm - 200
+    .input200 {
+      background-color: $inputColor;
+      &:focus-within {
+        box-shadow: 0px 0px 1px 2px rgba(172, 255, 47, 0.75);
+      }
+    }
+    .button200 {
+      background-color: rgba(172, 255, 47, 0.75);
+      color: Navy;
+      &:focus {
+        box-shadow: 0px 0px 1px 2px rgba(172, 255, 47, 1);
+      }
+    }
+    // search colors for drizzle - 300
+    .input300 {
+      background-color: rgba(255, 255, 255, 0.83);
+      &:focus-within {
+        box-shadow: 0px 0px 1px 2px rgba(0, 132, 255, 0.603);
+      }
+    }
+    .button300 {
+      background-color: rgba(0, 132, 255, 0.603);
+      color: white;
+      &:focus {
+        box-shadow: 0px 0px 1px 2px rgb(0, 132, 255);
+      }
+    }
     // search colors for rain - 500
     .input500 {
       background-color: rgba(255, 255, 255, 0.411);
-      &:focus {
+      &:focus-within {
         box-shadow: 0px 0px 1px 2px $outlineColor;
       }
     }
@@ -122,7 +153,7 @@
     }
     // search colors for snow - 600
     .input600 {
-      &:focus {
+      &:focus-within {
         box-shadow: 0px 0px 1px 2px rgba(0, 41, 128, 0.74);
       }
     }
@@ -135,14 +166,68 @@
     // search colors for fog - 700
     .input700 {
       background-color: rgba(128, 128, 128, 0.411);
-      &:focus {
+      &:focus-within {
         box-shadow: 0px 0px 1px 2px rgba(0, 68, 255, 0.7);
       }
     }
     .button700 {
       background-color: rgba(0, 68, 255, 0.7);
       &:focus {
+        box-shadow: 0px 0px 1px 2px rgba(0, 68, 255, 1);
+      }
+    }
+    // search colors for overcast - 804
+    .input804 {
+      background-color: $inputColor;
+      &:focus-within {
         box-shadow: 0px 0px 1px 2px rgba(0, 68, 255, 0.7);
+      }
+    }
+    .button804 {
+      background-color: rgba(0, 68, 255, 0.7);
+      color: white;
+      &:focus {
+        box-shadow: 0px 0px 1px 2px rgba(0, 68, 255, 1);
+      }
+    }
+  }
+
+  .recent {
+    display: flex;
+    flex-direction: row;
+    padding: 7px 0px 9px 0px;
+
+    @include narrow {
+      width: 90%;
+      overflow-x: scroll;
+    }
+    @include mobileKeyboard {
+      display: none;
+    }
+    @include mobileHorizontal {
+      display: none;
+    }
+
+    .city {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3px 10px 5px 10px;
+      margin: 0px 7px;
+      color: white;
+      background-color: $buttonColor;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      @include desktop {
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+      @include narrow {
+        overflow: visible;
       }
     }
   }
@@ -165,6 +250,7 @@
       top: 10px;
       width: 100vw;
       padding: 6px 10px;
+      border-radius: 0px;
     }
 
     @include mobileHorizontal {

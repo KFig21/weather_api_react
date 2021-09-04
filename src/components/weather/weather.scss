@@ -5,7 +5,7 @@
   justify-content: center;
   color: white;
   text-shadow: 0px 0px 16px rgba(0, 0, 0, 0.8);
-  height: 60vh;
+  height: 57vh;
 
   * {
     overflow: visible;
@@ -18,8 +18,10 @@
   }
 
   @include narrow {
-    height: 37vh;
+    height: 31vh;
     min-height: 300px;
+    min-width: 85vw;
+    max-width: 85vw;
   }
   @include mobileKeyboard {
     min-height: 260px;
@@ -38,14 +40,20 @@
       margin-top: 0px;
     }
 
+    @include mobileHorizontal {
+      margin-top: 0px;
+    }
+
     // location
     h1 {
       font-size: 70px;
-      margin-bottom: 50px;
+      padding-bottom: 40px;
       margin-top: 0px;
+      width: 100%;
+      text-align: center;
 
       @include mobile {
-        margin-bottom: 20px;
+        padding-bottom: 20px;
         font-size: 60px;
       }
 
@@ -162,6 +170,21 @@
           }
         }
       }
+    }
+
+    // background for drizzle - 300
+    .bg300 {
+      background-color: rgba(0, 0, 0, 0.05);
+      border-radius: 10px;
+      text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+      backdrop-filter: blur(2px) contrast(95%);
+    }
+    // background for overcast - 804
+    .bg804 {
+      background-color: rgba(0, 0, 0, 0.15);
+      border-radius: 10px;
+      text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+      backdrop-filter: blur(2px) contrast(95%);
     }
   }
 }

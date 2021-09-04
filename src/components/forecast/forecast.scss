@@ -19,14 +19,20 @@
   @include mobile {
     flex-direction: column;
     max-width: 500px;
-    height: 45vh;
-    margin-bottom: 60px;
+    max-height: 45vh;
+    height: auto;
+    margin-bottom: 20px;
     text-shadow: 0px 0px 5px black;
+    padding: 15px 0px;
   }
   @include narrow {
-    height: 50vh;
+    max-height: 50vh;
+    height: auto;
     justify-content: flex-start;
     overflow-y: scroll;
+    margin-bottom: 60px;
+    min-width: 85vw;
+    max-width: 85vw;
   }
   @include mobileKeyboard {
     display: none;
@@ -54,8 +60,12 @@
       align-items: center;
       justify-content: space-between;
       padding: 0px;
-      width: 80%;
+      width: 90%;
       margin-bottom: 0px;
+
+      &:nth-child(7) {
+        padding-bottom: 4px;
+      }
     }
 
     @include desktop {
@@ -117,9 +127,26 @@
   }
 }
 
+// background for drizzle - 300
+.bg300 {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+  backdrop-filter: blur(2px) contrast(95%);
+}
+
+// background for snow - 600
 .bg600 {
   background-color: rgba(6, 31, 70, 0.4);
   border-radius: 3px;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
   backdrop-filter: blur(2px) contrast(80%);
+}
+
+// background for overcast - 804
+.bg804 {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+  backdrop-filter: blur(2px) contrast(95%);
 }
