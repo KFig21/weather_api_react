@@ -21,6 +21,7 @@
   @include mobileHorizontalKeyboard {
     height: unset;
     min-height: unset;
+    justify-content: center;
   }
 
   form {
@@ -167,6 +168,9 @@
 
     @include mobileHorizontal {
       bottom: -25px;
+    }
+    @include mobileHorizontalKeyboard {
+      display: none;
     }
   }
 }
