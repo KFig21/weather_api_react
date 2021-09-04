@@ -21,7 +21,8 @@
   @include mobileHorizontalKeyboard {
     height: unset;
     min-height: unset;
-    justify-content: center;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   form {
