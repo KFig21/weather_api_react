@@ -142,7 +142,7 @@ function App() {
 
     // set next 7 day forecast
     let forecastArr = [];
-    for (let i = 1; i < 8; i++) {
+    for (let i = 0; i < 8; i++) {
       let obj = {};
       obj.date = formatDate(forecastCall.daily[i].dt);
       obj.minFahrenheit = Math.round(
