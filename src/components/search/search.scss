@@ -18,6 +18,10 @@
     position: absolute;
     top: 0px;
   }
+  @include mobileHorizontalKeyboard {
+    height: unset;
+    min-height: unset;
+  }
 
   form {
     display: flex;
