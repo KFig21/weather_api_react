@@ -4,13 +4,11 @@ import "weather-icons/css/weather-icons.css";
 import Weather from "./components/weather/Weather";
 import Search from "./components/search/Search";
 import Forecast from "./components/forecast/Forecast";
-import canyonBGI from "./assets/background-canyon.jpg";
 import sunnyBGI from "./assets/background-sunny.jpg";
 import drizzleBGI from "./assets/background-drizzle.jpg";
 import rainBGI from "./assets/background-rain.jpg";
 import stormBGI from "./assets/background-storm.jpg";
 import snowBGI from "./assets/background-snow.jpg";
-import cloudBGI from "./assets/background-cloud.jpg";
 import cloudBGI801 from "./assets/background-cloud-801.jpg";
 import cloudBGI802 from "./assets/background-cloud-802.jpg";
 import cloudBGI803 from "./assets/background-cloud-803.jpg";
@@ -31,6 +29,7 @@ function App() {
   const [forecast, setForecast] = useState([{}, {}, {}, {}, {}, {}, {}, {}]);
   const [backgroundCode, setBackgroundCode] = useState(null);
   const [recent, setRecent] = useState([
+    "Philadelphia",
     "New York",
     "Los Angeles",
     "Tokyo",
@@ -53,7 +52,6 @@ function App() {
   }
   const handleTempType = () => {
     tempType === "imperial" ? setTempType("metric") : setTempType("imperial");
-    console.log(tempType);
   };
   const getIcon = (rangeId, bool) => {
     // current day bool = true which allows the backgrounf img to change
@@ -95,7 +93,7 @@ function App() {
     }
   };
 
-  const getWeather = async (city, country) => {
+  const getWeather = async (city, country, recentBool) => {
     // call api
     const weather_api_call = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_key}`
@@ -112,8 +110,6 @@ function App() {
       `https://api.openweathermap.org/data/2.5/onecall?lat=${weatherCall.coord.lat}&lon=${weatherCall.coord.lon}&exclude=minutely,hourly,alerts&appid=${API_key}`
     );
     const forecastCall = await forecast_api_call.json();
-    console.log("weatherCall", weatherCall);
-    console.log("forecastCall", forecastCall);
 
     setLat(weatherCall.coord.lat);
     setLon(weatherCall.coord.lon);
@@ -133,9 +129,14 @@ function App() {
     });
 
     //set recent
-    if (!recent.includes(weatherCall.name)) {
+    if (!recent.includes(weatherCall.name) && !recentBool) {
       let arr = [weatherCall.name, ...recent];
       arr.pop();
+      setRecent(arr);
+    } else if (recent.includes(weatherCall.name)) {
+      let index = recent.indexOf(weatherCall.name);
+      recent.splice(index, 1);
+      let arr = [weatherCall.name, ...recent];
       setRecent(arr);
     }
 
@@ -159,19 +160,20 @@ function App() {
       obj.icon = getIcon(forecastCall.daily[i].weather[0].id, false);
       forecastArr.push(obj);
     }
-    console.log(forecastArr);
     setError("");
     setForecast(forecastArr);
   };
 
   useEffect(() => {
-    getWeather("New York");
+    getWeather("Philadelphia");
   }, []);
+
+  var date = new Date();
 
   return (
     <div className="App">
       <div className="day-info">
-        {new Date().toLocaleDateString("en-US", {
+        {new Date(date).toLocaleDateString("en-US", {
           timeZone: "UTC",
         })}
       </div>
@@ -215,7 +217,7 @@ function App() {
       />
       <img
         style={backgroundCode === 300 ? { opacity: 1 } : { opacity: 0 }}
-        src={rainBGI}
+        src={drizzleBGI}
         alt="drizzle"
       />
       <img

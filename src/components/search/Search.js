@@ -25,11 +25,14 @@ export default function Search({
       let arr = [city, ...recent];
       arr.pop();
       setRecent(arr);
+    } else if (recent.includes(city)) {
+      let index = recent.indexOf(city);
+      recent.splice(index, 1);
+      let arr = [city, ...recent];
+      setRecent(arr);
     }
-    getWeather(city, "");
+    getWeather(city, "", true);
   };
-
-  console.log("recent", recent);
 
   return (
     <div className="search">
@@ -62,14 +65,18 @@ export default function Search({
         </button>
       </form>
       <div className="recent">
-        {recent.map((city) => (
-          <span
-            className={`city city${backgroundCode}`}
-            onClick={() => handleRecentSearch(`${city}`)}
-          >
-            {city}
-          </span>
-        ))}
+        {recent.map((city, index) => {
+          if (index > 0) {
+            return (
+              <span
+                className={`city city${backgroundCode}`}
+                onClick={() => handleRecentSearch(`${city}`)}
+              >
+                {city}
+              </span>
+            );
+          }
+        })}
       </div>
       <div className="error" style={error ? { opacity: 1 } : { opacity: 0 }}>
         <span>{error ? error : null}</span>
