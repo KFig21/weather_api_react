@@ -232,6 +232,34 @@
         padding: 5px 10px;
       }
     }
+
+    // recent colors for thunderstorm - 200
+    .city200 {
+      background-color: rgba(172, 255, 47, 0.75);
+      color: Navy;
+    }
+    // recent colors for drizzle - 300
+    .city300 {
+      background-color: rgba(0, 132, 255, 0.603);
+      color: white;
+    }
+    // recent colors for rain - 500
+    .city500 {
+      background-color: $buttonColor;
+    }
+    // recent colors for snow - 600
+    .city600 {
+      background-color: rgba(255, 153, 0, 0.7);
+    }
+    // recent colors for fog - 700
+    .city700 {
+      background-color: rgba(0, 68, 255, 0.7);
+    }
+    // recent colors for overcast - 804
+    .city804 {
+      background-color: rgba(0, 68, 255, 0.7);
+      color: white;
+    }
   }
 
   .error {

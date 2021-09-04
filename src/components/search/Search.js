@@ -64,7 +64,7 @@ export default function Search({
       <div className="recent">
         {recent.map((city) => (
           <span
-            className={`city`}
+            className={`city city${backgroundCode}`}
             onClick={() => handleRecentSearch(`${city}`)}
           >
             {city}
