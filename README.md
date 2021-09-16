@@ -9,7 +9,7 @@
 <h3>Features:</h3>
 
 - Unique backgrounds and color schemes for each weather type
-- Switch between Metric and Imperial by clicking the current temp or the temp indicator in the top right corner
+- Switch between Metric and Imperial by clicking the current temp or the temp indicator in the top left corner
 - 7 day forecast
 - Last 5 recent searches readily available below the search bar
 - Responsive design
