@@ -4,7 +4,7 @@
 <p><a href="https://kfig21.github.io/weather_api_react/" target="_blank" rel="noopener noreferrer">View the project here!</a> 👀</p>
 
 <h3>Summary</h3>
-<p>A weather app built with React, styled with Sass, and uses OpenWeather API to retreive and display data on a fully responsive UI. The app shows the location's current weather & 7 day forecast, your 5 most recent searches, and the ability to switch between metric and imperial.</p>
+<p>This was the API project for <a href="https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/weather-app">The Odin Project's</a> JavaScript curriculum. A weather app built with React, styled with Sass, and uses OpenWeather API to retreive and display data on a fully responsive UI. The app shows the location's current weather & 7 day forecast, your 5 most recent searches, and the ability to switch between metric and imperial.</p>
 
 <h3>Features:</h3>
 
